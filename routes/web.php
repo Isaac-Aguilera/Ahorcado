@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+Route::get('/home', function () {
+    return view('home');
+})->name("home");
+
+Route::post('/partida', [Controller::class, 'empezar'])->name("partida");
+Route::post('/jugar', [Controller::class, 'jugar'])->name("jugar");
+Route::post('/reset', [Controller::class, 'reset'])->name("reset");
