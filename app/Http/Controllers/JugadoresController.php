@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class JugadoresController extends Controller
 {
+    // Funcion para crear la palabra a partir del nombre del superheroe.
     public static function inicializarPalabra($superheroe) {
 
         $palabra = "";
@@ -21,8 +22,9 @@ class JugadoresController extends Controller
 
         return $palabra;
     }
+    
     /**
-     * Show the form for creating a new resource.
+     * Crea un jugador y le assigna los datos que han passado.
      *
      * @return \Illuminate\Http\Response
      */

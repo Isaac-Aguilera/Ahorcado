@@ -17,6 +17,7 @@ class Jugador extends Model
         'fallos' => [],
         'aciertos' => [],
         'vidas' => 6,
+        'jugando' => true,
     ];
 
 }

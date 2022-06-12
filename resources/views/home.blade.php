@@ -7,6 +7,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/home.js') }}" defer></script>
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -23,7 +24,7 @@
           </nav>
     </header>
     <body class="antialiased">
-        <h1 class="fs-1 text-center mt-5">Ahorcado de superheroes</h1>
+        <h1 class="fs-1 text-center mt-2 mt-md-5">Ahorcado de superheroes</h1>
         <div class="position-absolute top-50 start-50 translate-middle d-flex justify-content-center w-75">
             <form class="w-75" method="POST" action="{{ url('partida') }}">
                 @csrf
@@ -45,27 +46,7 @@
             </form>
         </div>
     </body>
-    <footer class="position-fixed bottom-0 start-50 translate-middle">
-        <p class="">Website provided by Isaac Aguilera Cano || Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) </p>
+    <footer class="position-fixed top-100 start-50 translate-middle text-center pb-5">
+        <p class="mb-5">Website provided by Isaac Aguilera Cano || Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) </p>
     </footer>
 </html>
-<script>
-    document.getElementById('numeroJugadores').addEventListener("change",function() {
-        document.getElementById('jugadores').innerHTML = "";
-        $jugadores = document.getElementById('numeroJugadores').value;
-        if ($jugadores > 100) {$jugadores = 100;}
-        for ($i = 0; $i < $jugadores; $i++) {
-            document.getElementById('jugadores').innerHTML += '<input id="jugador'+$i+'" name="jugador'+$i+'" type="text" class="form-control my-3" required placeholder="Nombre">'; 
-        }
-    });
-
-    document.getElementById('headerImage').src = "img/"+superheroeAleatorio();
-
-    function superheroeAleatorio() {
-        var texto = "AngryHulk.png,Batman.png,capitanA.png,HappyHulk.png,IronMan.png,PencilThor.png,superhero1.png,superhero2.png,superhero3.png";
-        opciones = texto.split(",");
-        posicionAleatoria = Math.floor(Math.random() * opciones.length);
-        return opciones[posicionAleatoria];
-    }
-
-</script>
