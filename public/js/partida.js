@@ -78,7 +78,6 @@ document.addEventListener('keyup', (event) => {
                 /*
                     Si la peticion ajax funciona correctamente se muestra el nuevo contenido.
                 */
-                console.log(response);
                 id = response['id'];
                 // Actualizar el nombre.
                 document.getElementById('nombre').innerHTML = 'Jugador: '+response['nombre'];
